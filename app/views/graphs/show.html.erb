@@ -8,11 +8,13 @@
 <% @merania.each_with_index do |meranie, index| %>
     <%= link_to index, graph_path(index, :file => @file, :col => 1) %>
 <% end %>
+<%= link_to 'all', graph_path(-1, :file => @file, :col => 1) %>
+
 <p><b>Priemery</b></p>
 <% @merania.each_with_index do |meranie, index| %>
     <%= link_to index, graph_path(index, :file => @file, :col => 2) %>
 <% end %>
 
 
-<%= line_chart @merania[@id] %>
+<%= column_chart @merania[@id] %>
 

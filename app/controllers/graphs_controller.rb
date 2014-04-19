@@ -1,4 +1,4 @@
-class GraphsController <   ApplicationController
+class GraphsController < ApplicationController
 
   def index
 
@@ -11,9 +11,11 @@ class GraphsController <   ApplicationController
     @texts = Dir.glob("app/assets/texts/*.txt")
     @file = params[:file]
     @id = params[:id].to_i
+
     @col = params[:col].to_i
 
-    @merania = StatReader.read(@file,@col)
+    @merania = StatReader.read(@file, @col)
+
 
     render 'show'
   end
